@@ -19,6 +19,7 @@ public class TapTest : MonoBehaviour
             rend.material.color = UnityEngine.Random.ColorHSV();
             this.transform.localScale += Vector3.one * .2f;
             Debug.Log("ASDF");
+            Debug.Log("Trying to commit via cmd.");
         }
     }
 }
