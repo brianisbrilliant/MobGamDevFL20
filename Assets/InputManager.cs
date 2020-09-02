@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour
     public float minPower = 50f, maxPower = 200;
 
     // these should be private
-    public float timer = 0;
+    public float timer = 50;
     public bool mouseIsDown = false;
 
 
