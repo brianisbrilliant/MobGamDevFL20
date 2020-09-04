@@ -8,21 +8,27 @@ public class InputManager : MonoBehaviour
 {
 
     public TextMeshProUGUI debugText;
+    static TextMeshProUGUI scoreText;
+
     public Slider powerSlider;
     public bool phoneIsAttached = true;
     public Transform bulletSpawn;
     public Rigidbody2D bullet;
     public float minPower = 50f, maxPower = 200;
 
+    static int score = 0;
+
     // these should be private
     public float timer = 50;
     public bool mouseIsDown = false;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         debugText.text = "Input Mgr Connected!";
+        scoreText = GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -75,5 +81,10 @@ public class InputManager : MonoBehaviour
         
         timer = minPower;           // reset timer
         powerSlider.value = timer;
+    }
+
+    public void UpdateScore(int givenScore) {
+        score += givenScore;
+        scoreText.text = "Score: " + score.ToString();
     }
 }
