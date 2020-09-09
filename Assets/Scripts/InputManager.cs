@@ -13,6 +13,8 @@ public class InputManager : MonoBehaviour
     public Slider powerSlider;
     public bool phoneIsAttached = true;
     public Transform bulletSpawn;
+    [Tooltip("This is your gun barrel, or your tank.")]
+    public Transform gun;       
     public Rigidbody2D bullet;
     public float minPower = 50f, maxPower = 200;
 
@@ -21,7 +23,6 @@ public class InputManager : MonoBehaviour
     // these should be private
     public float timer = 50;
     public bool mouseIsDown = false;
-
 
 
     // Start is called before the first frame update
@@ -70,7 +71,7 @@ public class InputManager : MonoBehaviour
         }
     }
 
-    void Shoot() {
+    public void Shoot() {
         // add a ceiling to the timer's max amount.
         if(timer > maxPower) timer = maxPower;
 
@@ -86,5 +87,9 @@ public class InputManager : MonoBehaviour
     public void UpdateScore(int givenScore) {
         score += givenScore;
         scoreText.text = "Score: " + score.ToString();
+    }
+
+    public void RotateGun(int dir) {
+        gun.transform.Rotate(0, 0, dir * 5);
     }
 }
