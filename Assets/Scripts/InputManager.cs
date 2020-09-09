@@ -16,7 +16,10 @@ public class InputManager : MonoBehaviour
     [Tooltip("This is your gun barrel, or your tank.")]
     public Transform gun;       
     public Rigidbody2D bullet;
+    public GameObject enemyPrefab;
     public float minPower = 50f, maxPower = 200;
+    [Tooltip("The X and Y min and max spawn positions for enemies.")]
+    public Vector2 min, max;
 
     static int score = 0;
 
@@ -91,5 +94,15 @@ public class InputManager : MonoBehaviour
 
     public void RotateGun(int dir) {
         gun.transform.Rotate(0, 0, dir * 5);
+    }
+
+    public void SpawnEnemy() {
+        // the for loop has the counter built in.
+        int totalEnemies = Random.Range(4, 9);
+        for(int i = 0; i < totalEnemies; i += 1) {
+            GameObject newEnemy = Instantiate(enemyPrefab);
+            newEnemy.transform.position = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
+        }
+        
     }
 }
