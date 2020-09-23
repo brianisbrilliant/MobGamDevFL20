@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 3fc5de8316ecd483f8a3b62c26ffb70f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tanks.unity
     guid: b2c472e7db8604f3e9a6f70bc7280364
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ProgrammingTestScene.unity
     guid: c1d320be2efbb4251a6744718bf5ea5a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/TiltTest.unity
     guid: d7e16a869547f5646bdb46d23fb3797e
+  - enabled: 1
+    path: Assets/Scenes/Midterm.unity
+    guid: fd72fe21cda434060bdcf7aeb6890923
   m_configObjects: {}

@@ -48,4 +48,9 @@ public class Pause : MonoBehaviour
         // make sure game is "unpaused"
         Time.timeScale = 1;
     }
+
+    public void QuitGame() {
+        Debug.Log("Quitting");
+        Application.Quit();
+    }
 }

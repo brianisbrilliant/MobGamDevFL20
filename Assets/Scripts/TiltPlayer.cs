@@ -21,8 +21,8 @@ public class TiltPlayer : MonoBehaviour
     {
         Vector3 dir = Vector3.zero;
 
-		dir.x = -Input.acceleration.x;		// x to x
-		dir.y = -Input.acceleration.z;		// y to z
+		dir.x = Input.acceleration.x;		// x to x
+		dir.y = Input.acceleration.z;		// y to z
 		dir.z = 1;
 
 		// clamp acceleration vector to unit sphere
