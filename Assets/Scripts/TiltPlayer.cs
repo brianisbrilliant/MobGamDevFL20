@@ -36,6 +36,17 @@ public class TiltPlayer : MonoBehaviour
 		// move object
 		transform.Translate(dir * speed);
 		body.Rotate(0,0,-dir.x * rotSpeed);
+
+		// keyboard controls
+		Vector3 keyDir = Vector3.zero;
+		keyDir.x = Input.GetAxis("Horizontal");
+		keyDir.y = Input.GetAxis("Vertical");
+
+		keyDir *= Time.deltaTime;
+
+		transform.Translate(keyDir * speed);
+		body.Rotate(0,0,-keyDir.x * rotSpeed);
+
     }
 
 
@@ -46,7 +57,7 @@ public class TiltPlayer : MonoBehaviour
 			health -= 1;
 			healthText.text = "Health: " + health;
 			if(health <= 0) {
-				Application.LoadLevel(4);
+				Application.LoadLevel(0);
 			}
 			Debug.Log("I've been hurt! Health: " + health);
 			StartCoroutine(Invulnerable());

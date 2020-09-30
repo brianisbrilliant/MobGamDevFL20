@@ -21,6 +21,11 @@ public class ButtonTest : MonoBehaviour
         } else if (rotateLeft) {
             playerShip.Rotate(0,0, 1 * rotSpeed * Time.deltaTime);
         }
+
+        if(Input.GetKeyDown(KeyCode.A)) { rotateLeft = true; }
+        if(Input.GetKeyUp(KeyCode.A)) { rotateLeft = false; }
+        if(Input.GetKeyDown(KeyCode.D)) { rotateRight = true; }
+        if(Input.GetKeyUp(KeyCode.D)) { rotateRight = false; }
     }
 
     public void ButtonDown(string givenDir) {
